@@ -1,11 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDhrk6DkdItxU308lNePp55a2FoGfmOgQ8",
-    authDomain: "artitech-prod.firebaseapp.com",
-    projectId: "artitech-prod",
-    storageBucket: "artitech-prod.appspot.com",
-    messagingSenderId: "349266815783",
-    appId: "1:349266815783:web:ff4952bc351dbee3c3d702",
-    measurementId: "G-9W6NB00VQX"
+    apiKey:  import.meta.env.VITE_API_KEY,
+    authDomain:  import.meta.env.VITE_AUTH_DOMAIN, 
+    projectId:  import.meta.env.VITE_PROJECT_ID, 
+    storageBucket:  import.meta.env.VITE_STORAGE_BUCKET, 
+    messagingSenderId:  import.meta.env.VITE_MESSAGING_SENDER_ID, 
+    appId:  import.meta.env.VITE_APP_ID, 
+    measurementId:  import.meta.env.VITE_MEASUREMENT_ID,
   };
 
   
