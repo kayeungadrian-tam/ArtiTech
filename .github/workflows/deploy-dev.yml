@@ -5,7 +5,7 @@ name: Deploy to Firebase Prod
 "on":
   push:
     branches:
-      - main
+      - dev
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -26,10 +26,10 @@ jobs:
           yarn lint
           yarn test
 
-      - run: yarn build:prod
+      - run: yarn build:dev
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARTITECH_PROD }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARTITECH_DEV }}"
           channelId: live
-          projectId: artitech-prod
+          projectId: artitech-dev
