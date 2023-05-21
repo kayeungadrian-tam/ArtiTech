@@ -20,7 +20,7 @@ jobs:
       - name: install
         run: |
           yarn install
-          yarn install -g firebase-tools
+          yarn global add firebase-tools
 
       - name: lint and test
         run: |
