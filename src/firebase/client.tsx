@@ -1,3 +1,7 @@
+import { getAuth } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 const firebaseConfig = {
     apiKey:  import.meta.env.VITE_API_KEY,
     authDomain:  import.meta.env.VITE_AUTH_DOMAIN, 
@@ -8,5 +12,13 @@ const firebaseConfig = {
     measurementId:  import.meta.env.VITE_MEASUREMENT_ID,
   };
 
-  
-export default firebaseConfig;
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+
+// Initialize Google Authentication 
+
+export default app;
+// export default firebaseConfig;
