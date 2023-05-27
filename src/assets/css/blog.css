@@ -1,0 +1,120 @@
+.blog-post {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: start;
+    align-content: center;
+    gap: 5px;
+    align-self: start;
+    position: static;
+    height: 100%;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.subtitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.social-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid;
+    width: 100%;
+    flex-direction: row;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    border-image: linear-gradient(180deg, #000000 0%, rgba(255, 255, 255, 0) 100%) 1 / 1px 0px stretch;
+    border-width: 1px 0px;
+    border-bottom: 1px solid #9E9898;
+}
+
+.like-button,
+.unlike-button {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.like-button:hover,
+.unlike-button:hover {
+    background-color: #eee;
+}
+
+.like-button svg,
+.unlike-button svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.thumbnail {
+    margin-bottom: 40px;
+}
+
+.thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .thumbnail img {
+        border-radius: 3px;
+    }
+
+    .blog-content {
+        font-size: 16px;
+    }
+}
+
+.header-section {
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}

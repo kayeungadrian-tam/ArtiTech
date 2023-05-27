@@ -1,33 +1,50 @@
 .storybook-header {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-columns: 1fr;
+    flex-direction: row;
+    align-content: center;
+    justify-items: start;
+    width: 100%;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    text-align: start;
 }
 
 .storybook-header svg {
-  display: inline-block;
-  vertical-align: top;
+    display: inline-block;
+    vertical-align: top;
 }
 
 .storybook-header h1 {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1;
-  margin: 6px 0 6px 10px;
-  display: inline-block;
-  vertical-align: top;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
 }
 
-.storybook-header button + button {
-  margin-left: 10px;
+.storybook-header button+button {
+    margin-left: 10px;
 }
 
 .storybook-header .welcome {
-  color: #333;
-  font-size: 14px;
-  margin-right: 10px;
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.header {
+    display: inline;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
 }

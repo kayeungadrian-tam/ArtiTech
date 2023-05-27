@@ -2,12 +2,15 @@
 import { Button } from './button'
 
 
-import '../assets/css/header.css';
 
-
+import "../assets/css/header.css"
 
 type User = {
-  name: string;
+  user: {
+    displayName: string;
+    email: string;
+    photoURL: string;
+  };
 };
 
 interface HeaderProps {
@@ -43,7 +46,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
         {user ? (
           <>
             <span className="welcome">
-              Welcome, <b>{user.name}</b>!
+              Welcome, <b>{user.user.displayName}</b>!
             </span>
             <Button size="small" onClick={onLogout} label="Log out" />
           </>
