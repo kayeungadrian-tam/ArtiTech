@@ -5,7 +5,8 @@ export default createBoard({
     name: 'BlogPost',
     Board: () => <BlogPost />,
     environmentProps: {
-        canvasHeight: 695,
-        canvasWidth: 1258
+        canvasHeight: 903,
+        canvasWidth: 1258,
+        windowHeight: 756
     }
 });

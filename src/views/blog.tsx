@@ -34,8 +34,14 @@ const BlogPost = () => {
 
             <div className="thumbnail">
                 <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" /></div>
+            <div className="blog-meta">
+                <span>Author: </span>
+                <span>Created at: </span>
+            </div>
+
 
             <div className="blog-content">
+                <p className="blog-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore quidem iusto aliquam! Nostrum, blanditiis! Rerum voluptate voluptas repudiandae pariatur nulla accusantium aspernatur, eius corporis! Dicta ipsa dolorem est in minus.</p>
                 {/* Your blog post content goes here */}
             </div>
         </div>
