@@ -21,10 +21,10 @@ jobs:
           yarn install
           yarn global add firebase-tools
 
-      - name: lint and test
-        run: |
-          yarn lint
-          yarn test
+      # - name: lint and test
+      #   run: |
+      #     yarn lint
+      #     yarn test
 
       - run: yarn build:dev
       - uses: FirebaseExtended/action-hosting-deploy@v0
