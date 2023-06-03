@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
 import '../assets/css/blog.css';
-import { Header } from '../components/header';
+// import { Header } from '../components/header';
 
 const BlogPost = () => {
     const [likes, setLikes] = useState(0);
@@ -17,7 +17,7 @@ const BlogPost = () => {
 
     return (
         <div className="blog-post">
-            <Header />
+            {/* <Header /> */}
             <div className="header-section">
                 <h2 className="title">Title of the Blog Post</h2>
                 <h3 className="subtitle">Subtitle of the Blog Post</h3>

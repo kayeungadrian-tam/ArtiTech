@@ -1,7 +1,7 @@
 // A typical landing page in react
 
 import './landingPage.css';
-import React from 'react';
+// import React from 'react';
 
 
 const LandingPage = () => {

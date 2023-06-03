@@ -1,39 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 
 
 
 import { Header } from './components/header.tsx';
-import clickLogin from './firebase/utils.tsx';
-import BlogPost from './views/blog.tsx';
+// import clickLogin from './firebase/utils.tsx';
+// import BlogPost from './views/blog.tsx';
 import LandingPage from './views/landingPage.tsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
   // const [user, setUser] = useState(null); 
 
   const loginUser = () => {
-      const testUser = {
-        user:{
-          displayName: "testUser",
-          email: "",
-          photoURL: ""
-        }
-      } 
-      // setUser(testUser);
+    console.log("loginUser");
   }
 
   const logout = () => {
+    console.log("logout");
+  }
 
-    // setUser(null);
-}
+  const onCreateAccount = () => {
+    console.log("onCreateAccount");
+  }
+
+  const user = {
+    user: {
+      displayName: "ArtiTech",
+      email: "",
+      photoURL: "",
+  }}
 
   return (
     <>
 
-    <Header onLogin={loginUser} onLogout={logout}/>
+    <Header 
+      user={user}
+      onCreateAccount={onCreateAccount}
+      onLogin={loginUser} 
+    onLogout={logout}/>
     
       <LandingPage />
 
