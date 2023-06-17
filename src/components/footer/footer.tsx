@@ -21,13 +21,13 @@ export const Footer = ({ footerData }: FooterProps) => (
   <footer className="py-4 footer-bg">
     <div className="container mx-auto px-4 flex flex-col items-center">
       <div className="flex space-x-4">
-        <a href="/about" className="text-black-300 hover:text-white">
+        <a href="/about" className="text-black-300 hover:text-red-800">
           About
         </a>
-        <a href="/contact" className="text-black-300 hover:text-white">
+        <a href="/contact" className="text-black-300 hover:text-red-800">
           Contact
         </a>
-        <a href="/blog" className="text-black-300 hover:text-white">
+        <a href="/blog" className="text-black-300 hover:text-red-800">
           Blog
         </a>
       </div>
@@ -36,7 +36,7 @@ export const Footer = ({ footerData }: FooterProps) => (
           href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black-300 hover:text-white"
+          className="text-black-300 hover:text-gray-400"
         >
           <FaGithub className="h-8 w-8" />
         </a>
@@ -44,7 +44,7 @@ export const Footer = ({ footerData }: FooterProps) => (
           href="https://facebook.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black-300 hover:text-white"
+          className="text-black-300 hover:text-blue-800"
         >
           <FaFacebook className="h-8 w-8" />
         </a>
@@ -52,7 +52,7 @@ export const Footer = ({ footerData }: FooterProps) => (
           href="https://youtube.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black-300 hover:text-white"
+          className="text-black-300 hover:text-red-800"
         >
           <FaYoutube className="h-8 w-8" />
         </a>
@@ -60,7 +60,7 @@ export const Footer = ({ footerData }: FooterProps) => (
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black-300 hover:text-white"
+          className="text-black-300 hover:text-yellow-800"
         >
           <FaInstagram className="h-8 w-8" />
         </a>

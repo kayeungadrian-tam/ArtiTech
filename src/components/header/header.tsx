@@ -29,7 +29,7 @@ export const Header = ({
   onCreateAccount,
 }: HeaderProps) => (
   <header>
-    <div className="storybook-header">
+    <div className="flex flex-row justify-around">
       <div>
         <svg
           width="32"
@@ -52,9 +52,9 @@ export const Header = ({
             />
           </g>
         </svg>
-        <h1>ArtiTech</h1>
       </div>
-      <div>
+      <h1>ArtiTech</h1>
+      <div className="flex flex-row justify-around">
         {user ? (
           <>
             <span className="welcome">
