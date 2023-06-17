@@ -1,6 +1,7 @@
 import  { useState } from 'react';
 
 import '../assets/css/blog.css';
+import { Header } from '../components/header/header';
 // import { Header } from '../components/header';
 
 const BlogPost = () => {
@@ -17,7 +18,9 @@ const BlogPost = () => {
 
     return (
         <div className="blog-post">
-            {/* <Header /> */}
+            <div className="fix-top">
+                <Header />
+            </div>
             <div className="header-section">
                 <h2 className="title">Title of the Blog Post</h2>
                 <h3 className="subtitle">Subtitle of the Blog Post</h3>

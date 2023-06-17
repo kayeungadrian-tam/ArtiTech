@@ -1,26 +1,26 @@
 .storybook-header {
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 15px 20px;
+    padding: 20px;
+    /* margin: 20px; */
     display: flex;
     align-items: center;
     justify-content: space-around;
     grid-template-columns: 1fr;
     flex-direction: row;
     align-content: center;
-    justify-items: start;
-    width: 100%;
-    flex-wrap: nowrap;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-    text-align: start;
-    background: rgba(66, 200, 242, 0.16);
-    /* border-radius: 16px; */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    /* justify-items: start; */
+    /* width: 100%; */
+    /* flex-wrap: nowrap; */
+    /* position: fixed; */
+    /* top: 0px; */
+    /* left: 0px; */
+    /* z-index: 1; */
+    /* text-align: start; */
+    background: rgba(66, 200, 242, 0.4);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     background-position: 0%;
     background-size: auto;
     background-repeat: repeat;

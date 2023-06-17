@@ -1,73 +1,74 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import "primeicons/primeicons.css";
 
+import styles from "./index.css";
 
+import { RouterProvider } from "react-router-dom";
+import router from "./router/router.tsx";
 
-import { Header } from './components/header.tsx';
+import { Header } from "./components/header/header.tsx";
+import { Footer } from "./components/footer/footer.tsx";
 // import clickLogin from './firebase/utils.tsx';
 // import BlogPost from './views/blog.tsx';
-import LandingPage from './views/landingPage.tsx';
+import LandingPage from "./views/landing/landingPage.tsx";
+import { Spinner } from "./components/spinner/spinner.tsx";
+import { AppProvider } from "./providers/app.tsx";
+import { AppRoutes } from "./router/index.tsx";
 
 function App() {
   // const [count, setCount] = useState(0)
-  // const [user, setUser] = useState(null); 
+  // const [user, setUser] = useState(null);
 
   const loginUser = () => {
     console.log("loginUser");
-  }
+  };
 
   const logout = () => {
     console.log("logout");
-  }
+  };
 
   const onCreateAccount = () => {
     console.log("onCreateAccount");
-  }
+  };
 
   const user = {
     user: {
       displayName: "ArtiTech",
       email: "",
       photoURL: "",
-  }}
+    },
+  };
+
+  const footerData = {
+    text: "ArtiTech",
+    link: "https://www.artitech.com",
+    linkText: "ArtiTech",
+    icon: "pi pi-google",
+  };
 
   return (
     <>
-
+      <AppProvider>
+        {/* <RouterProvider router={router} /> */}
+        <AppRoutes />
+      </AppProvider>
+      {/* 
     <Header 
       user={user}
       onCreateAccount={onCreateAccount}
       onLogin={loginUser} 
     onLogout={logout}/>
-    
-      <LandingPage />
+     */}
+      {/* <LandingPage /> */}
 
+      {/* <Spinner color="black" size="sm"/> */}
 
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <h1>Vite + React ({import.meta.env.MODE})</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
+      {/* <Footer footerData={footerData}/> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
 
-import BlogPost from '../views/blog.tsx';
+import LandingPage from './landingPage.tsx';
 
 const meta = {
-    title: 'View/Blog',
-    component: BlogPost,
+    title: 'View/Pages/LandingPage',
+    component: LandingPage,
     parameters: {
         // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-        layout: 'fullscreen',
+        // layout: 'fullscreen',
     },
-} satisfies Meta<typeof BlogPost>;
+} satisfies Meta<typeof LandingPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

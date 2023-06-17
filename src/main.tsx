@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client'
 // import './index.css'
 import router from './router/router.tsx';
 import { RouterProvider } from 'react-router-dom';
+import App from './App.tsx';
 
 // import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
 // import { getFunctions, connectFunctionsEmulator } from 'firebase/functions'
@@ -32,6 +33,6 @@ import { RouterProvider } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>,
 )

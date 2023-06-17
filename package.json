@@ -15,11 +15,19 @@
     "test": "firebase emulators:exec --only firestore 'vitest run'"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "clsx": "^1.2.1",
     "firebase": "^9.22.0",
+    "postcss": "^8.4.24",
+    "primeicons": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.10",
+    "react-helmet-async": "^1.3.0",
+    "react-icons": "^4.9.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.11.2"
+    "react-router-dom": "^6.11.2",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^2.0.7",
