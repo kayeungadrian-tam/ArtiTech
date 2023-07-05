@@ -1,11 +1,8 @@
- 
-import React from 'react';
-import ReactDOM from 'react-dom/client'
-// import App from './App.tsx'
-// import './index.css'
-import router from './router/router.tsx';
-import { RouterProvider } from 'react-router-dom';
-import App from './App.tsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import router from "./router/router.tsx";
+import { RouterProvider } from "react-router-dom";
+import App from "./App.tsx";
 
 // import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
 // import { getFunctions, connectFunctionsEmulator } from 'firebase/functions'
@@ -15,7 +12,6 @@ import App from './App.tsx';
 // import {getApp} from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 // import firebaseConfig from './firebase/client.tsx';
-
 
 // initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
@@ -30,9 +26,8 @@ import App from './App.tsx';
 //   connectFirestoreEmulator(db, 'localhost', 8080)
 // }
 
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

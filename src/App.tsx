@@ -4,17 +4,13 @@
 import "./App.css";
 import "primeicons/primeicons.css";
 
-import styles from "./index.css";
+import "./assets/css/index.css";
 
 import { RouterProvider } from "react-router-dom";
 import router from "./router/router.tsx";
 
 import { Header } from "./components/header/header.tsx";
 import { Footer } from "./components/footer/footer.tsx";
-// import clickLogin from './firebase/utils.tsx';
-// import BlogPost from './views/blog.tsx';
-import LandingPage from "./views/landing/landingPage.tsx";
-import { Spinner } from "./components/spinner/spinner.tsx";
 import { AppProvider } from "./providers/app.tsx";
 import { AppRoutes } from "./router/index.tsx";
 
@@ -51,10 +47,23 @@ function App() {
 
   return (
     <>
-      <AppProvider>
-        {/* <RouterProvider router={router} /> */}
-        <AppRoutes />
-      </AppProvider>
+      <body className="dark:bg-black">
+        <AppProvider>
+          <Header
+            onLogin={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            onLogout={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+            onCreateAccount={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
+          {/* <RouterProvider router={router} /> */}
+          <AppRoutes />
+        </AppProvider>
+      </body>
       {/* 
     <Header 
       user={user}

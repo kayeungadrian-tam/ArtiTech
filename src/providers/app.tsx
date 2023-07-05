@@ -6,6 +6,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { Spinner } from "../components/spinner/spinner";
 import { Error500 } from "../views/error/500";
 
+import { ThemeProvider } from "next-themes";
+
 type AppProviderProps = {
   children: React.ReactNode;
 };
@@ -21,13 +23,13 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     >
       <ErrorBoundary FallbackComponent={Error500}>
         <HelmetProvider>
-          {/* <QueryClientProvider client={queryClient}> */}
-          {/* {process.env.NODE_ENV !== 'test' && <ReactQueryDevtools />} */}
-          {/* <Notifications /> */}
-          {/* <AuthProvider> */}
-          <Router>{children}</Router>
-          {/* </AuthProvider> */}
-          {/* </QueryClientProvider> */}
+          <ThemeProvider
+            attribute="class"
+            enableSystem={false}
+            defaultTheme="dark"
+          >
+            <Router>{children}</Router>
+          </ThemeProvider>
         </HelmetProvider>
       </ErrorBoundary>
     </React.Suspense>

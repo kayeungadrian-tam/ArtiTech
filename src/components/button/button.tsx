@@ -1,8 +1,6 @@
-// import React from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsGithub } from "react-icons/bs";
-
-import "../../assets/css/button.css";
+import { BiLike, BiDislike } from "react-icons/bi";
 
 const buttonSize = {
   small: "py-2 px-4 text-xs",
@@ -14,6 +12,8 @@ const buttonIcons = {
   google: FcGoogle,
   facebook: BsFacebook,
   github: BsGithub,
+  like: BiLike,
+  dislike: BiDislike,
   null: "",
 };
 
@@ -41,7 +41,7 @@ interface ButtonProps {
    */
   label: string;
 
-  icon?: "google" | "facebook" | "github" | "null";
+  icon?: "google" | "facebook" | "github" | "like" | "dislike" | "null";
 
   /**
    * Optional click handler
@@ -64,15 +64,19 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const mode = primary
-    ? "bg-blue-500 hover:bg-blue-700 text-white font-bold border-2 border-blue-500"
-    : "bg-white hover:bg-gray-100 text-gray-800 font-semibold border-2 border-gray-200";
+    ? "lease-in-up hidden bg-primary  font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
+    : "bg-black/20  font-semibold text-black duration-300 ease-in-out hover:bg-black/30 dark:bg-white/20 dark:text-white dark:hover:bg-white/30";
   const Icon = buttonIcons[icon];
 
   return (
     <button
       id={id}
       type="button"
-      className={["storybook-button", buttonSize[size], mode].join(" ")}
+      className={[
+        "rounded-xl py-3 px-8 text-base m-1",
+        buttonSize[size],
+        mode,
+      ].join(" ")}
       style={{ backgroundColor }}
       {...props}
     >
