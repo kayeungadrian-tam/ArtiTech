@@ -5,8 +5,8 @@
 // import "../../index.css";
 
 import { Button } from "../../components/button/button";
-import { Head } from "../../components/head/head";
-import { Header } from "../../components/header/header";
+// import { Head } from "../../components/head/head";
+// import { Header } from "../../components/header/header";
 
 // import { Footer } from "../../components/footer/footer";
 
@@ -402,7 +402,14 @@ export default function LandingPage() {
         </div>
       </div>
       <div className="bottom-0 left-0 right-0 py-0">
-        <Footer />
+        <Footer
+          footerData={{
+            text: "",
+            link: "",
+            linkText: "",
+            icon: "",
+          }}
+        />
       </div>
     </>
   );

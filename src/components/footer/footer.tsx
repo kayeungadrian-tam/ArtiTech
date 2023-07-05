@@ -19,6 +19,7 @@ interface FooterProps {
 
 export const Footer = ({ footerData }: FooterProps) => (
   <footer className="py-4 footer-bg">
+    {footerData && ""}
     <div className="container mx-auto px-4 flex flex-col items-center">
       <div className="flex space-x-4">
         <a href="/about" className="text-black-300 hover:text-red-800">

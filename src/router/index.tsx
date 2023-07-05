@@ -4,7 +4,7 @@ import { useRoutes } from "react-router-dom";
 // import { useAuth } from '@/lib/auth';
 
 // import { protectedRoutes } from './protected';
-import { publicRoutes } from "./public";
+// import { publicRoutes } from "./public";
 import BlogPost from "../views/blog/blog";
 import LandingPage from "../views/landing/landingPage";
 

@@ -1,6 +1,6 @@
 import { Button } from "../button/button";
-import { Spinner } from "../spinner/spinner";
-import { useEffect, useState } from "react";
+// import { Spinner } from "../spinner/spinner";
+import { SetStateAction, useEffect, useState } from "react";
 import ThemeToggler from "./themeToggler.tsx";
 
 import menuData from "./menuData.tsx";
@@ -28,8 +28,8 @@ export const Header = ({
   user,
   onLogin,
   onLogout,
-  onCreateAccount,
-}: HeaderProps) => {
+}: // onCreateAccount,
+HeaderProps) => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
@@ -51,7 +51,7 @@ export const Header = ({
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => {
+  const handleSubmenu = (index: SetStateAction<number>) => {
     if (openIndex === index) {
       setOpenIndex(-1);
     } else {

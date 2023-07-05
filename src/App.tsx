@@ -6,11 +6,11 @@ import "primeicons/primeicons.css";
 
 import "./assets/css/index.css";
 
-import { RouterProvider } from "react-router-dom";
-import router from "./router/router.tsx";
+// import { RouterProvider } from "react-router-dom";
+// import router from "./router/router.tsx";
 
 import { Header } from "./components/header/header.tsx";
-import { Footer } from "./components/footer/footer.tsx";
+// import { Footer } from "./components/footer/footer.tsx";
 import { AppProvider } from "./providers/app.tsx";
 import { AppRoutes } from "./router/index.tsx";
 
@@ -18,32 +18,32 @@ function App() {
   // const [count, setCount] = useState(0)
   // const [user, setUser] = useState(null);
 
-  const loginUser = () => {
-    console.log("loginUser");
-  };
+  // const loginUser = () => {
+  //   console.log("loginUser");
+  // };
 
-  const logout = () => {
-    console.log("logout");
-  };
+  // const logout = () => {
+  //   console.log("logout");
+  // };
 
-  const onCreateAccount = () => {
-    console.log("onCreateAccount");
-  };
+  // const onCreateAccount = () => {
+  //   console.log("onCreateAccount");
+  // };
 
-  const user = {
-    user: {
-      displayName: "ArtiTech",
-      email: "",
-      photoURL: "",
-    },
-  };
+  // const user = {
+  //   user: {
+  //     displayName: "ArtiTech",
+  //     email: "",
+  //     photoURL: "",
+  //   },
+  // };
 
-  const footerData = {
-    text: "ArtiTech",
-    link: "https://www.artitech.com",
-    linkText: "ArtiTech",
-    icon: "pi pi-google",
-  };
+  // const footerData = {
+  //   text: "ArtiTech",
+  //   link: "https://www.artitech.com",
+  //   linkText: "ArtiTech",
+  //   icon: "pi pi-google",
+  // };
 
   return (
     <>

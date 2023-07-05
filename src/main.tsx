@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import router from "./router/router.tsx";
-import { RouterProvider } from "react-router-dom";
+// import router from "./router/router.tsx";
+// import { RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 
 // import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
