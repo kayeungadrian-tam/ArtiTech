@@ -24,6 +24,7 @@ export const SimpleBlog: Story = {
             createdAt: '2021-01-01',
             thumbnail: 'https://avatars.githubusercontent.com/u/1403242?v=4',
         },
+        title: 'This is a blog post',
     },
 };
 

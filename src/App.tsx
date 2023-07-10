@@ -13,8 +13,12 @@ import { Header } from "./components/header/header.tsx";
 // import { Footer } from "./components/footer/footer.tsx";
 import { AppProvider } from "./providers/app.tsx";
 import { AppRoutes } from "./router/index.tsx";
+import { Button } from "./components/button/button.tsx";
+import { SignUpModal } from "./components/modal/signUp.tsx";
+import { useState } from "react";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
   // const [count, setCount] = useState(0)
   // const [user, setUser] = useState(null);
 
@@ -45,6 +49,13 @@ function App() {
   //   icon: "pi pi-google",
   // };
 
+  const showSignInModal = () => {
+    console.log("showSignInModal");
+    setShowModal(true);
+    const favDialog = document.getElementById("sign-up-dialog");
+    favDialog?.showModal();
+  };
+
   return (
     <>
       <body className="dark:bg-black">
@@ -56,26 +67,16 @@ function App() {
             onLogout={function (): void {
               throw new Error("Function not implemented.");
             }}
-            onCreateAccount={function (): void {
-              throw new Error("Function not implemented.");
-            }}
+            onCreateAccount={showSignInModal}
           />
           {/* <RouterProvider router={router} /> */}
           <AppRoutes />
         </AppProvider>
       </body>
-      {/* 
-    <Header 
-      user={user}
-      onCreateAccount={onCreateAccount}
-      onLogin={loginUser} 
-    onLogout={logout}/>
-     */}
-      {/* <LandingPage /> */}
 
-      {/* <Spinner color="black" size="sm"/> */}
-
-      {/* <Footer footerData={footerData}/> */}
+      <dialog id="sign-up-dialog" className="bg-transparent">
+        <SignUpModal />
+      </dialog>
     </>
   );
 }

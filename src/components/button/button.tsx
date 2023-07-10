@@ -47,6 +47,9 @@ interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+
   id?: string;
 }
 
@@ -64,8 +67,8 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const mode = primary
-    ? "lease-in-up hidden bg-primary  font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
-    : "bg-black/20  font-semibold text-black duration-300 ease-in-out hover:bg-black/30 dark:bg-white/20 dark:text-white dark:hover:bg-white/30";
+    ? "lease-in-up hidden bg-primary  font-bold text-white transition hover:bg-opacity-90  md:block md:px-9 lg:px-6 xl:px-9"
+    : "bg-black/20  font-semibold text-black  ease-in-out hover:bg-black/30 dark:bg-white/20 dark:text-white dark:hover:bg-white/30";
   const Icon = buttonIcons[icon];
 
   return (
@@ -73,7 +76,7 @@ export const Button = ({
       id={id}
       type="button"
       className={[
-        "rounded-xl py-3 px-8 text-base m-1",
+        "rounded-xl py-3 px-8 text-base m-1 hover:shadow-signUp dark:hover:shadow-white duration-300 flex items-center justify-center gap-3",
         buttonSize[size],
         mode,
       ].join(" ")}
