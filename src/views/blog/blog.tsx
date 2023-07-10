@@ -1,10 +1,11 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 import { BiCalendar } from "react-icons/bi";
 import { BsEye } from "react-icons/bs";
 
 // import "../../assets/css/blog.css";
-import { Header } from "../../components/header/header";
 import { Button } from "../../components/button/button";
 
 type BlogMeta = {
@@ -31,7 +32,41 @@ const BlogPost = ({ blogMeta, title }: BlogProps) => {
     setDislikes(dislikes + 1);
   };
 
-  const markdownContent = "# Hello **React Markdown**!";
+  const markdownContent = `
+  # A markdown preview \n
+  **React Markdown!** \n
+  This is a markdown preview \n
+
+  # Header 1  \n
+  ## Header 2 \n
+  ### Header 3 \n
+
+  ## Features \n
+  * It works with React \n
+  * It has features \n
+  * It even has features! \n
+  
+  ## Usage \n
+  1. Import the component \n
+  2. Use the component \n
+  3. Write your content \n
+
+  ## Code \n
+  \`\`\`javascript
+  import ReactMarkdown from "react-markdown";
+  import remarkGfm from "remark-gfm";
+
+  \`\`\`
+
+  ## Example table \n
+  | Feature | Support |
+  | ------- | ------- |
+  | tables  | ✔ |
+  | alignment | ✔ |
+  | wewt | ✔ |
+
+  
+  `;
 
   return (
     <>
@@ -108,6 +143,25 @@ const BlogPost = ({ blogMeta, title }: BlogProps) => {
                       />
                     </div>
                   </div>
+                  {/* Blog main content */}
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className="markdown text-left text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+                  >
+                    {markdownContent}
+                  </ReactMarkdown>
+                  <p className="mb-8 text-base text-left font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Quis enim lobortis scelerisque fermentum. Neque
+                    sodales ut etiam sit amet. Ligula ullamcorper
+                    <strong className="text-primary dark:text-white">
+                      malesuada
+                    </strong>
+                    proin libero nunc consequat interdum varius. Quam
+                    pellentesque nec nam aliquam sem et tortor consequat.
+                    Pellentesque adipiscing commodo elit at imperdiet.
+                  </p>
                 </div>
               </div>
             </div>
