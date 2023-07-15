@@ -7,6 +7,7 @@ import { BsEye } from "react-icons/bs";
 
 // import "../../assets/css/blog.css";
 import { Button } from "../../components/button/button";
+import { useLocation, Link } from "react-router-dom";
 
 type BlogMeta = {
   displayName: string;
@@ -17,10 +18,13 @@ type BlogMeta = {
 
 interface BlogProps {
   blogMeta?: BlogMeta;
-  title: string;
+  title?: string;
+  id: string;
 }
 
-const BlogPost = ({ blogMeta, title }: BlogProps) => {
+const BlogPost = ({ id }: BlogProps) => {
+  const { state } = useLocation();
+
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
 
@@ -77,7 +81,7 @@ const BlogPost = ({ blogMeta, title }: BlogProps) => {
               {/* title */}
               <div>
                 <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
-                  {title || "Title of the Blog Post"}
+                  {state.id || "Title of the Blog Post"}
                 </h2>
                 <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                   <div className="flex flex-wrap items-center">
@@ -91,7 +95,7 @@ const BlogPost = ({ blogMeta, title }: BlogProps) => {
                       {/* Author meta */}
                       <div className="w-full">
                         <h4 className="mb-1 text-base font-medium text-body-color">
-                          @<span>{blogMeta?.displayName || "author"}</span>
+                          {/* @<span>{blogMeta?.displayName || "author"}</span> */}
                         </h4>
                       </div>
                     </div>
@@ -146,7 +150,7 @@ const BlogPost = ({ blogMeta, title }: BlogProps) => {
                   {/* Blog main content */}
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
-                    className="markdown text-left text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+                    className="markdown text-left text-base font-medium leading-relaxed text-dark sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
                   >
                     {markdownContent}
                   </ReactMarkdown>

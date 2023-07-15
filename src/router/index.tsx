@@ -7,6 +7,7 @@ import { useRoutes } from "react-router-dom";
 // import { publicRoutes } from "./public";
 import BlogPost from "../views/blog/blog";
 import LandingPage from "../views/landing/landingPage";
+import BlogList from "../views/blogList";
 
 export const AppRoutes = () => {
   //   const auth = useAuth();
@@ -23,6 +24,10 @@ export const AppRoutes = () => {
     {
       path: "/blog",
       element: <BlogPost />,
+    },
+    {
+      path: "/blogList",
+      element: <BlogList />,
     },
   ];
 

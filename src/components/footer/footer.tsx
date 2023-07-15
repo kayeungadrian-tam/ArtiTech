@@ -1,10 +1,7 @@
 // A typical footer component in react
 // with different styles
 
-import "../../assets/css/footer.css";
-
 import { FaGithub, FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
-// import FooterProps from '../interface/footer';
 
 type FooterData = {
   text: string;
@@ -18,7 +15,7 @@ interface FooterProps {
 }
 
 export const Footer = ({ footerData }: FooterProps) => (
-  <footer className="py-4 footer-bg">
+  <footer className="py-4 footer-bg wow fadeInUp relative z-10 bg-primary bg-opacity-5 pt-16 md:pt-20 lg:pt-24">
     {footerData && ""}
     <div className="container mx-auto px-4 flex flex-col items-center">
       <div className="flex space-x-4">

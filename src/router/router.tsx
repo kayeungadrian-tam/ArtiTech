@@ -12,9 +12,13 @@ const router = createBrowserRouter([
     // path: "/",
     // element: <App />,
   },
+  // {
+  // path: "/blog",
+  // element: <BlogPost />,
+  // },
   {
-    path: "/blog",
-    element: <BlogPost />,
+    path: "/blog/:id",
+    element: <BlogPost title={""} id={""} />,
   },
 ]);
 
