@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         title: 'Card Title',
-        content: 'Card Content',
+        id: 1
     }
 };
 

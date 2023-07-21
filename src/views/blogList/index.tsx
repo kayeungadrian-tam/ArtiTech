@@ -63,7 +63,7 @@ const BlogList = () => {
               key={blog.id}
               className="w-full px-4 md:w-2/5 lg:w-1/3 xl:w-1/4 mb-8 md:px-8 md:mb-12"
             >
-              <Card title={blog.title} content={blog.body} id={blog.id} />
+              <Card title={blog.title} id={blog.id} />
               {/* <SingleBlog blog={blog} /> */}
             </div>
           ))}
@@ -78,7 +78,7 @@ const BlogList = () => {
         {/* Render the blog posts data from the array */}
         {blogs.map((post) => (
           <div key={post.id}>
-            <Card title={post.title} content={""} id={post.id} />
+            <Card title={post.title} id={post.id} />
           </div>
         ))}
       </section>

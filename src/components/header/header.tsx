@@ -29,8 +29,8 @@ export const Header = ({
   user,
   onLogin,
   onLogout,
-  onCreateAccount,
-}: // ,
+}: // onCreateAccount,
+// ,
 HeaderProps) => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -67,9 +67,9 @@ HeaderProps) => {
   const handleMouseEnter = () => {
     setIsModalOpen((prevsetIsModalOpen) => !prevsetIsModalOpen);
   };
-  const handleMouseLeave = () => {
-    setIsModalOpen(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setIsModalOpen(false);
+  // };
 
   return (
     <>
