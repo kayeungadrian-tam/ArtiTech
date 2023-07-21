@@ -1,6 +1,3 @@
-// A typical footer component in react
-// with different styles
-
 import { FaGithub, FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
 
 type FooterData = {
@@ -15,9 +12,21 @@ interface FooterProps {
 }
 
 export const Footer = ({ footerData }: FooterProps) => (
-  <footer className="py-4 footer-bg wow fadeInUp relative z-10 bg-primary bg-opacity-5 pt-16 md:pt-20 lg:pt-24">
+  <footer
+    className="
+  py-10
+  footer-bg 
+  wow 
+  fadeInUp 
+  relative 
+  z-10 
+  bg-primary 
+  bg-opacity-5 
+  dark:bg-dark
+  "
+  >
     {footerData && ""}
-    <div className="container mx-auto px-4 flex flex-col items-center">
+    <div className="container mx-auto my-auto px-4 flex flex-col items-center justify-center h-16 ">
       <div className="flex space-x-4">
         <a href="/about" className="text-black-300 hover:text-red-800">
           About
@@ -25,7 +34,7 @@ export const Footer = ({ footerData }: FooterProps) => (
         <a href="/contact" className="text-black-300 hover:text-red-800">
           Contact
         </a>
-        <a href="/blog" className="text-black-300 hover:text-red-800">
+        <a href="/blogs" className="text-black-300 hover:text-red-800">
           Blog
         </a>
       </div>

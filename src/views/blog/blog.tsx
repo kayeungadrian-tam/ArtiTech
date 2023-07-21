@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -7,7 +7,7 @@ import { BsEye } from "react-icons/bs";
 
 // import "../../assets/css/blog.css";
 import { Button } from "../../components/button/button";
-import { useLocation, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 type BlogMeta = {
   displayName: string;
@@ -19,14 +19,30 @@ type BlogMeta = {
 interface BlogProps {
   blogMeta?: BlogMeta;
   title?: string;
-  id: string;
 }
 
-const BlogPost = ({ id }: BlogProps) => {
-  const { state } = useLocation();
+const BlogPost = ({}: BlogProps) => {
+  const { id } = useParams();
 
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
+
+  const [blogPost, setBlogPost] = useState({ title: "", body: "" });
+  // Fetch blog post by id
+  useEffect(() => {
+    const fetchBlogPost = async () => {
+      try {
+        const response = await fetch(`https://dummyjson.com/posts/${id}`);
+        const data = await response.json();
+        setBlogPost(data);
+        console.log("data", data);
+      } catch (error) {
+        console.error("Error fetching blog post:", error);
+      }
+    };
+
+    fetchBlogPost();
+  }, [id]);
 
   const handleLike = () => {
     setLikes(likes + 1);
@@ -72,6 +88,10 @@ const BlogPost = ({ id }: BlogProps) => {
   
   `;
 
+  if (!blogPost) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <section className="pt-[150px] pb-[120px]">
@@ -81,7 +101,7 @@ const BlogPost = ({ id }: BlogProps) => {
               {/* title */}
               <div>
                 <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
-                  {state.id || "Title of the Blog Post"}
+                  {blogPost?.title || ""}
                 </h2>
                 <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                   <div className="flex flex-wrap items-center">
@@ -99,8 +119,8 @@ const BlogPost = ({ id }: BlogProps) => {
                         </h4>
                       </div>
                     </div>
-                    {/* Blog meta */}
                     <div className="mb-5 flex items-center">
+                      {/* Blog meta */}
                       <p className="mr-5 flex items-center text-base font-medium text-body-color">
                         <span className="mr-2">
                           <BiCalendar />
@@ -134,10 +154,8 @@ const BlogPost = ({ id }: BlogProps) => {
                 </div>
                 {/* Blog intro */}
                 <div>
-                  <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat.
+                  <p className="mb-10 text-base text-justify font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+                    {blogPost?.body || ""}
                   </p>
                   <div className="mb-10 w-full overflow-hidden rounded">
                     <div className="relative">
@@ -150,7 +168,7 @@ const BlogPost = ({ id }: BlogProps) => {
                   {/* Blog main content */}
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
-                    className="markdown text-left text-base font-medium leading-relaxed text-dark sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
+                    className="markdown text-left dark:text-white font-medium leading-relaxed text-dark sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
                   >
                     {markdownContent}
                   </ReactMarkdown>

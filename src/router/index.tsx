@@ -22,12 +22,12 @@ export const AppRoutes = () => {
       // element: <App />,
     },
     {
-      path: "/blog",
-      element: <BlogPost />,
+      path: "/blogs",
+      element: <BlogList />,
     },
     {
-      path: "/blogList",
-      element: <BlogList />,
+      path: "/blog/:id",
+      element: <BlogPost />,
     },
   ];
 

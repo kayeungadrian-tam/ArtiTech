@@ -13,7 +13,7 @@ import { Header } from "./components/header/header.tsx";
 // import { Footer } from "./components/footer/footer.tsx";
 import { AppProvider } from "./providers/app.tsx";
 import { AppRoutes } from "./router/index.tsx";
-import { Button } from "./components/button/button.tsx";
+// import { Button } from "./components/button/button.tsx";
 import { SignUpModal } from "./components/modal/signUp.tsx";
 import { useState } from "react";
 
@@ -58,7 +58,7 @@ function App() {
 
   return (
     <>
-      <body className="dark:bg-black">
+      <div className="dark:bg-black">
         <AppProvider>
           <Header
             onLogin={function (): void {
@@ -72,7 +72,7 @@ function App() {
           {/* <RouterProvider router={router} /> */}
           <AppRoutes />
         </AppProvider>
-      </body>
+      </div>
 
       <dialog id="sign-up-dialog" className="bg-transparent">
         <SignUpModal />
