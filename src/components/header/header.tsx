@@ -6,6 +6,8 @@ import { SignUpModal } from "../../components/modal/signUp.tsx";
 
 import menuData from "./menuData.tsx";
 
+import Logo from "../../assets/img/magi_logo.png";
+
 type User = {
   displayName: string;
   email: string;
@@ -85,10 +87,10 @@ HeaderProps) => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <a href="/" className="text-black-300 hover:text-blue-800">
                 <img
-                  // src={Logo}
+                  src={Logo}
                   alt="Logo"
                   className={`header-logo block w-full ${
-                    sticky ? "py-5 lg:py-2" : "py-8 w-48 h-32"
+                    sticky ? "py-0 w-24 h-16" : "py-8 w-48 h-36"
                   } `}
                 />
               </a>
